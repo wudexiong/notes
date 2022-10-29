@@ -3,13 +3,69 @@
 # mkdocs: https://www.mkdocs.org/user-guide/configuration/
 
 site_name: WuDeXiong—知识库
+repo_url: https://github.com/wudexiong/notes
+copyright: >
+  Copyright &copy; 2022 - so far Wudexiong–
+  <a href="#__consent">Change cookie settings</a>
 theme:
   name: material
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: 自动
+    - media: "(prefers-color-scheme: dark)"
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: 黑夜
+    - media: "(prefers-color-scheme: light)"
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: 白天
   #  favicon: attachment/portrait.png
   language: zh # 中文，解决中文搜索问题
+  extra:
+    # 社交链接
+    social:
+      - icon: fontawesome/brands/github
+        link: https://github.com/wudexiong
+        name: github
+    # 语言切换
+    alternate:
+      - name: English
+        link: /en/ 
+        lang: en
+    # 谷歌分析
+    analytics:
+      provider: google
+      property: G-XXXXXXXXXX
+    consent:
+      title: Cookie同意书
+      description: >- 
+        我们使用Cookie识别您的重复访问和偏好衡量我们文档的有效性，
+        以及用户是否找到他们要找的东西。经您同意，
+        您正在帮助我们使我们的文档更好。
+      actions:
+        - accept
+        - manage
+    generator: false
   features:
-    - navigation.expand 
-    - tabs 
+    - navigation.tracking
+    - navigation.instant
+    - navigation.expand
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - toc.integrate
+    - tabs
+    - search.suggest
+    - search.highlight
+    - search.share
+    - header.autohide
 markdown_extensions: 
   - attr_list # https://squidfunk.github.io/mkdocs-material/reference/images/
   - pymdownx.tabbed  # https://squidfunk.github.io/mkdocs-material/reference/content-tabs/
@@ -40,7 +96,11 @@ markdown_extensions:
   - pymdownx.tasklist
   - pymdownx.tilde
 plugins:
-  - search
+  - search: 
+      lang: 
+        - zh
+        - en
+      separator: '[\s\-,:!=\[\]()"/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - roamlinks 
     #- autolinks 
   - exclude:
