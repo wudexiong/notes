@@ -7,13 +7,9 @@ repo_url: https://github.com/wudexiong/notes
 copyright: >
   Copyright &copy; 2022 - so far Wudexiong–
   <a href="#__consent">Change cookie settings</a>
-theme:
+theme: 
   name: material
   palette:
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: 自动
     - media: "(prefers-color-scheme: dark)"
     - scheme: slate
       toggle:
@@ -55,8 +51,8 @@ theme:
     - navigation.tracking
     - navigation.instant
     - navigation.expand
+    - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
     - navigation.indexes
     - navigation.top
     - toc.follow
